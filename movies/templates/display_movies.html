@@ -1,9 +1,24 @@
 <html>
     <head>
-        <title>Pelicula</title>
-        
+        {% load static %}
+        <title>Peliculas</title>
+        <link rel="stylesheet" href="{% static "bootstrap.min.css" %}">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </head>
     <body>
-        
+        <div class="container">
+            <div class="bg-primary text-white p-4 text-center">
+                <h1>Mis Peliculas</h1>
+                <img src="{% static "logo.png" %}" alt="">
+            </div>
+            <p>Has elegido la pelicula: <strong>{{ movie | capfirst }}</strong></p>
+            <h3>Informacion:</h3>
+            <ul>
+                <li>Genero: {{ movie.gender}}</li>
+                <li>Director de pelicula: {{ movie.director}}</li>
+                <li>Año de lanzamiento: {{ movie.year_realease}}</li>
+                <li>Sinopsis: {{ movie.sinopsis}}</li>
+            </ul>
+        </div>
     </body>
 </html>

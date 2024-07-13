@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Movies (models.Model):
+class Movie (models.Model):
     tittle = models.CharField(max_length=50, null=False)
     gender = models.CharField(max_length=25, null=False)   
     director = models.CharField(max_length=50, null=False)
